@@ -1,22 +1,16 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Head from 'next/head'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
 
-export default function Home({ posts }) {
-  return (
-    <div>
-      <Head>
-        <title>Next Static Site</title>
-      </Head>
 
-      <div className="posts">
-        {posts.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
-      </div>
+const Home = ({ posts }) => {
+  return (
+    <div className="posts">
+      {posts.map((post, index) => (
+        <Post key={index} post={post} />
+      ))}
     </div>
   )
 }
@@ -42,3 +36,5 @@ export async function getStaticProps() {
     }
   }
 }
+
+export default Home
