@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import marked from 'marked'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function PostPage({
   frontmatter: { title, date, cover_image },
@@ -10,7 +11,11 @@ export default function PostPage({
   content,
 }) {
   return (
-    <>
+    <motion.div 
+      exit={{ opacity: 0 }} 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }}
+    >
       <Link href='/'>
         <a className='btn btn-back'>Go Back</a>
       </Link>
@@ -22,7 +27,7 @@ export default function PostPage({
           <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 
