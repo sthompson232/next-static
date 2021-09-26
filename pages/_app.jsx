@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import '../styles/globals.scss'
-import { ChakraProvider, ThemeProvider } from '@chakra-ui/react'
-import theme from '../styles/theme'
+import '../styles/main.scss'
 import Footer from '../components/Footer'
+import { AnimatePresence } from 'framer-motion'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,15 +19,13 @@ function MyApp({ Component, pageProps }) {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </Head>
-    <Navbar />
-    <div className="container">
-      <ChakraProvider>
-        <ThemeProvider theme={theme}>
+    <AnimatePresence exitBeforeEnter>
+      <Navbar />
+        <div className="container">
           <Component {...pageProps} />
-        </ThemeProvider>
-      </ChakraProvider>
-    </div>
-    <Footer />
+        </div>
+      <Footer />
+    </AnimatePresence>
     </>
   )
 }

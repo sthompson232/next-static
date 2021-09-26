@@ -3,15 +3,18 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
+import { motion } from 'framer-motion'
 
 
-const Home = ({ posts }) => {
+const Index = ({ posts }) => {
   return (
-    <div className="posts">
-      {posts.map((post, index) => (
-        <Post key={index} post={post} />
-      ))}
-    </div>
+    <motion.div exit={{ opacity: 0 }}>
+      <div className="posts">
+        {posts.map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
+      </div>
+    </motion.div>
   )
 }
 
@@ -37,4 +40,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Home
+export default Index
