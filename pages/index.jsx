@@ -8,7 +8,11 @@ import { motion } from 'framer-motion'
 
 const Index = ({ posts }) => {
   return (
-    <motion.div exit={{ opacity: 0 }}>
+    <motion.div 
+      exit={{ opacity: 0 }} 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }}
+    >
       <div className="posts">
         {posts.map((post, index) => (
           <Post key={index} post={post} />
