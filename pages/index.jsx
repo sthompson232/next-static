@@ -5,19 +5,46 @@ import Post from '../components/Post'
 import { sortByDate } from '../utils'
 import { motion } from 'framer-motion'
 
+let easing = [0.6, -0.05, 0.01, 0.99];
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.05
+    }
+  }
+};
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+    transition: { duration: 0.6, ease: easing }
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing
+    }
+  }
+};
 
 const Index = ({ posts }) => {
   return (
     <motion.div 
       exit={{ opacity: 0 }} 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }}
+      initial='initial'
+      animate='animate'
     >
-      <div className="posts">
+      <motion.div variant={stagger} className="posts">
         {posts.map((post, index) => (
-          <Post key={index} post={post} />
+          <motion.div key={index} variants={fadeInUp}>
+            <Post post={post} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.div>
   )
 }
