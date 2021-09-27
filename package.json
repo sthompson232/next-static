@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
-    "bootstrap": "^5.1.1",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
     "marked": "^3.0.2",
@@ -18,9 +17,10 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "17.0.2",
-    "react-bootstrap": "^1.6.4",
     "react-dom": "17.0.2",
-    "sass": "^1.42.1"
+    "react-intersection-observer": "^8.32.1",
+    "sass": "^1.42.1",
+    "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
     "eslint": "7.32.0",
