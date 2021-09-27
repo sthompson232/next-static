@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import marked from 'marked'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { fadeInX, pageFadeIn } from '../../utils/animations'
+import { fadeInX, pageFadeIn, staggerChildren } from '../../utils/animations'
 
 export default function PostPage({
   frontmatter: { title, date, cover_image },
@@ -18,20 +18,24 @@ export default function PostPage({
       exit='exit'
     >
       <motion.div variants={pageFadeIn}>
-        <Link href='/'>
-          <a className='btn btn-back'>Go Back</a>
-        </Link>
+        <motion.div variants={staggerChildren}>
+          <motion.div variants={fadeInX}>
+            <Link href='/'>
+              <a className='btn btn-back'>Go Back</a>
+            </Link>
+          </motion.div>
         <div className='card card-page'>
-          <h1 className='post-title'>{title}</h1>
-          <div className='post-date'>Posted on {date}</div>
+          <motion.h1 variants={fadeInX} className='post-title'>{title}</motion.h1>
+          <motion.div variants={fadeInX} className='post-date'>Posted on {date}</motion.div>
           <motion.img 
             variants={fadeInX}
             src={cover_image}
           />
           <div className='post-body'>
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+            <motion.div variants={fadeInX} dangerouslySetInnerHTML={{ __html: marked(content) }}></motion.div>
           </div>
         </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   )

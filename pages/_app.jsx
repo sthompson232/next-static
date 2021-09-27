@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import '../styles/main.scss'
 import Footer from '../components/Footer'
+import '../styles/main.scss'
 import { AnimatePresence } from 'framer-motion'
 
 
@@ -21,11 +21,19 @@ function MyApp({ Component, pageProps, router }) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Head>
       <Navbar />
-        <div className="container">
-          <AnimatePresence exitBeforeEnter>
-            <Component {...pageProps} key={router.route} />
-          </AnimatePresence>
-        </div>
+        <AnimatePresence 
+          exitBeforeEnter
+          onExitComplete={() => {
+            if (typeof window !== 'undefined') {
+              window.scrollTo({ top: 0 })
+            }
+          }}
+        >
+          <Component
+            key={router.route}
+            {...pageProps}
+          />
+        </AnimatePresence>
       <Footer />
     </>
   )

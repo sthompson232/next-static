@@ -4,8 +4,8 @@ import matter from 'gray-matter'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
 import { motion } from 'framer-motion'
-import { fadeInShakeX, pageFadeIn, staggerChildren } from '../utils/animations'
-import FadeInOnScroll from '../components/FadeInOnScroll'
+import { fadeInX, pageFadeIn } from '../utils/animations'
+import FadeInOnScroll from '../components/utils/FadeInOnScroll'
 
 
 const Index = ({ posts }) => {
@@ -15,14 +15,14 @@ const Index = ({ posts }) => {
       animate='animate'
       exit='exit'
     >
-      <motion.div variants={pageFadeIn} className="posts">
-
-        {posts.map((post, index) => (
-          <FadeInOnScroll key={index}>
-            <Post post={post} />
-          </FadeInOnScroll>
-        ))}
-
+      <motion.div variants={pageFadeIn}>
+        <div className='posts'>
+          {posts.map((post, index) => (
+            <FadeInOnScroll key={index}>
+                <Post post={post} />
+            </FadeInOnScroll>
+          ))}
+        </div>
       </motion.div>
     </motion.div>
   )
