@@ -3,28 +3,23 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { fadeInX, pageFadeIn } from '../utils/animations'
 import FadeInOnScroll from '../components/utils/FadeInOnScroll'
+import AnimationWrapper from '../components/utils/AnimationWrapper'
 
 
 const Index = ({ posts }) => {
   return (
-    <motion.div 
-      initial='initial'
-      animate='animate'
-      exit='exit'
-    >
-      <motion.div variants={pageFadeIn}>
-        <div className='posts'>
-          {posts.map((post, index) => (
-            <FadeInOnScroll key={index}>
-                <Post post={post} />
-            </FadeInOnScroll>
-          ))}
-        </div>
-      </motion.div>
-    </motion.div>
+    <AnimationWrapper>
+      <div className='posts'>
+        {posts.map((post, index) => (
+          <FadeInOnScroll key={index}>
+              <Post post={post} />
+          </FadeInOnScroll>
+        ))}
+      </div>
+    </AnimationWrapper>
   )
 }
 
