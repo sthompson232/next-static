@@ -3,8 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import Post from '../components/Post'
 import { sortByDate } from '../utils'
-import { AnimatePresence, motion } from 'framer-motion'
-import { fadeInX, pageFadeIn } from '../utils/animations'
 import FadeInOnScroll from '../components/utils/FadeInOnScroll'
 import AnimationWrapper from '../components/utils/AnimationWrapper'
 

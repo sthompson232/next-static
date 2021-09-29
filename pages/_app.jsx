@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/Footer'
-import '../styles/main.scss'
+import '../styles/globals.css'
 import { AnimatePresence } from 'framer-motion'
 
 

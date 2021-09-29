@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+/*****************************************************************************************************/
+/* PROJECT STYLES */
+
+/*****************************************************************************************************/
+/* GLOBAL STYLES */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navigation-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #fff;
+}
+
+.navigation-button {
+  outline: none;
+  border: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 17px;
+  left: 29px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 10;
+}
+
+.display-1 {
+  @apply text-9xl;
+}
+
+.display-2 {
+  @apply text-8xl;
+}
+
+.display-3 {
+  @apply text-7xl;
+}
+
+.display-4 {
+  @apply text-6xl;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-4xl;
+}
+
+h3 {
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+h6 {
+  @apply text-lg;
+}
