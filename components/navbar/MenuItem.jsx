@@ -1,5 +1,5 @@
-import * as React from "react";
-import { motion } from "framer-motion";
+import * as React from "react"
+import { motion } from "framer-motion"
 import Link from 'next/link'
 
 const variants = {
@@ -30,7 +30,7 @@ export const MenuItem = ({ page, toggle }) => {
     >
       <div onClick={toggle}>
         <Link href={page.url} passHref onClick={toggle}>
-            <h3 className="cursor-pointer">{page.name}</h3>
+            <h4 className="cursor-pointer">{page.name}</h4>
         </Link>
       </div>
     </motion.li>
