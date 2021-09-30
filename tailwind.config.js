@@ -11,8 +11,8 @@ module.exports = {
         white: '#ffffff',
         },
         fontFamily: {
-        // sans: ['Graphik', 'sans-serif'],
-        // serif: ['Merriweather', 'serif'],
+        sans: ['Poppins', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
         },
     },
     variants: {
